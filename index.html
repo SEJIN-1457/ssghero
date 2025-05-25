@@ -1,0 +1,195 @@
+ <!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 시대, 나의 유산</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #000;
+      color: #f0f0f0;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: #111;
+      color: #f0f0f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 9999;
+      border-bottom: 1px solid #333;
+    }
+    .navbar h1 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #ccc;
+    }
+    .navbar img {
+      height: 28px;
+    }
+    section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 120px 20px 60px;
+      background-color: #000;
+      animation: fadeIn 1.5s ease forwards;
+      opacity: 0;
+      scroll-margin-top: 80px;
+    }
+    section.visible {
+      opacity: 1;
+    }
+    .content {
+      max-width: 860px;
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 50px;
+      border-radius: 12px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+    }
+    .content p {
+      margin-bottom: 1.8em;
+      animation: riseUp 1s ease both;
+      font-size: 1.8rem;
+    }
+    .question {
+      font-size: 2.4rem;
+      font-weight: bold;
+      color: #ffe066;
+      font-family: 'Georgia', serif;
+    }
+    .question.fade {
+      opacity: 0.3;
+      transition: opacity 1s;
+    }
+    .final-message {
+      font-size: 1.8rem; /* 크기 수정 */
+      font-weight: normal; /* 굵기 수정 */
+      color: #ffe066; /* 질문과 동일한 색상 */
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #000;
+      animation: fadeIn 2s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes riseUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <h1>AI 시대, 나는 어떤 것을 나의 유산으로 남길 것인가?</h1>
+    <img src="hero.png" alt="지식향연 로고">
+  </div>
+
+  <section>
+    <div class="content">
+      <p class="question" id="q1">AI 시대, 나는 AI의 굴림을 받는 사람일까?</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="content">
+      <p class="question fade" id="q2">아니면 AI를 조련하는 사람일까?</p>
+      <p>매일 프롬프트를 바꿔가며 AI에게 질문을 던진다. 문장을 고치고, 더 나은 답을 요구한다. 더 정확하게, 더 예쁘게, 더 설득력 있게. 그렇게 완성된 글을 마주할 때마다 문득, 나는 스스로에게 묻는다. 지금 이 글은, 정말 내가 쓴 글인가?</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="content">
+      <p>AI는 나의 사고를 빠르게 현실화시켜준다. 표현을 보조하고, 창작의 효율을 비약적으로 끌어올린다. 하지만 편리함에 익숙해질수록 나의 사유는 점점 정해진 틀 안에 안착한다. 내가 AI를 조련한다고 믿었지만, 어느 순간 나는 그 알고리즘의 질서에 따라 조정되고 있었다.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="content">
+      <p class="question">나는 여전히 사유의 주도권을 쥐고 있는가?</p>
+      <p>나는 종종 AI의 매끄러운 문장에 만족하지 못한다. "이것이 정말 내가 말하고 싶은 방식인가?" "왜 하필 이 구성을 택했을까?" 완성된 문장을 지우고, 의도를 되짚고, 단어 하나를 다시 고르는 과정 속에서 나는 내가 생각하고 있다는 사실을 확인한다. 이 반복되는 질문과 수정의 행위는, AI의 흐름에 떠밀리지 않으려는 나만의 저항이자 흔적이다.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="content">
+      <p>질문을 멈추지 않는 태도는 오래전부터 인간이 삶을 탐색해온 방식이었다. 고대의 헤로도토스는 신화나 전승이 아닌, 자신이 직접 보고 들은 것을 기록했다. 수천 킬로미터를 넘는 여정을 통해 그는 진실을 확인하고자 했다. 이는 눈이 멀었지만 신의 영감으로 전쟁을 노래한 호메로스와 대비된다. 헤로도토스는 말한다. "내가 본 것, 내가 겪은 것을 기록하겠다." 오늘날 AI가 정답을 제시하는 시대에, 이 선언은 더욱 의미심장하게 다가온다.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="content">
+      <p>이제현 역시 직접 발로 디디며 세상을 본 인물이었다. 그는 오랜 여정 끝에 그린 자신의 초상화를 수십 년 후 다시 마주하고, 과거의 자신을 시로 표현했다. 그것은 단순한 기록이 아니라, 시간과 자아를 성찰하는 대화였다. 그처럼 질문은 내면을 들여다보게 한다. 하지만 우리가 사는 세상은 종종 물음표를 부담스러워한다. 답을 빨리 찾으라고, 확신하라고, 흔들리지 말라고 한다. 그러나 여행은 다르다. 여행은 그 물음표를 존중해주고, 오래 품게 해준다.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="content">
+      <p>존 F. 케네디는 대학 시절 유럽을 여행하며 국제 문제에 눈을 떴고, 그 경험이 그의 삶을 바꿨다. 여행은 시각 중심의 인증샷을 넘어, 오감을 동원해 낯선 것을 마주하고, 자신 안의 낯선 질문을 끌어올리는 과정이다. 나는 여행지에서 풍경을 바라보며 그 이면의 현실을 묻고, 관광객의 시선에 맞춰 연출된 현지성을 구분하려 애쓴다. 그 감각은 AI가 주는 정답을 대할 때의 나의 감각과 닮아 있다.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="content">
+      <p>AI는 데이터를 분석하고 패턴을 제시한다. 그러나 AI는 묻지 않는다. 왜 그 구성이 옳은지, 다른 시선은 없는지. 나는 그 틈에서 질문을 던지고, 방향을 바꾸고, 다시 시작한다. 내 사고를 나의 것으로 지키기 위해서다.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="content">
+      <p>최준영 박사는 말한다. 여행에서 얻은 감정과 깨달음은 돌아와 글로 정리할 때 비로소 '자기화된 경험'이 된다고. 나 역시 질문을 통해 얻은 감각을 기록한다. 완성된 글보다 고쳐 쓴 흔적을, 정답보다 답하지 못한 질문을.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="final-message">
+      내가 던졌던 수많은 물음표들이,<br />
+      내가 이 시대를 어떻게 살아냈는지를 보여주는<br />
+      고유한 증거가 되기를 바란다.
+    </div>
+  </section>
+
+  <script>
+    let currentIndex = 0;
+    const sections = document.querySelectorAll('section');
+    
+    // 자동으로 스크롤 이동하는 함수
+    function scrollToNextSection() {
+      if (currentIndex < sections.length - 1) {
+        currentIndex++;
+        sections[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    // 페이지 로딩 시 첫 번째 문단 보이도록
+    window.addEventListener('load', () => {
+      sections[currentIndex].classList.add('visible');
+    });
+
+    // 스페이스 키나 엔터 키 감지
+    window.addEventListener('keydown', (e) => {
+      if (e.key === ' ' || e.key === 'Enter') { // 스페이스 또는 엔터 키가 눌렸을 때
+        scrollToNextSection();
+      }
+    });
+  </script>
+</body>
+</html>
